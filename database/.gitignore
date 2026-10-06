@@ -1,0 +1,49 @@
+# Laravel
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.*
+.phpunit.result.cache
+.phpunit.cache
+/storage/framework/
+/storage/*
+/storage/framework/cache/*
+# Laravel build outputs (Mix/Vite)
+/public/hot
+/public/build
+
+# IDE & Editor
+/.idea
+/.vscode
+/.fleet
+/.zed
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer
+auth.json
+
+# NPM/Yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Phpactor
+.phpactor.json
+
+# Homestead & Vagrant
+Homestead.yaml
+Homestead.json
+
+# Backup files
+*.bak
+*.backup
+
+# Optional Git hooks/tools cache
+/.git/hooks/*.lock
+/docker-compose.override.yml
+/docker/*.env

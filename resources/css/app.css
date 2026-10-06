@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alpine.js x-cloak directive - Ẩn các element cho đến khi Alpine.js khởi tạo xong */
+[x-cloak] { 
+    display: none !important; 
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-gray-50 text-slate-800 antialiased; }
+}
+
+@layer components {
+ .btn { @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-medium shadow-sm bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 disabled:opacity-60; }
+  .card { @apply rounded-2xl border bg-white p-6 shadow-sm; }
+  .badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600; }
+
+  .sidebar { @apply h-full bg-white dark:bg-slate-900 border-r dark:border-slate-800; }
+  .sidebar-link { @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800; }
+  .sidebar-link-active { @apply bg-blue-50 text-blue-700 hover:bg-blue-50 dark:bg-blue-900/30 dark:text-blue-300; }
+  .sidebar-icon { @apply w-5 h-5 shrink-0; }
+  .sidebar-label { @apply truncate; }
+  .kpi  { @apply card; }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl
+           bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5
+           font-medium text-white shadow-sm
+           hover:from-blue-700 hover:to-indigo-700
+           focus:outline-none focus:ring-2 focus:ring-blue-300;
+  }
+  .btn-soft {
+    @apply inline-flex items-center justify-center rounded-xl
+           bg-slate-100 px-4 py-2.5 font-medium text-slate-700
+           hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200;
+  }
+
+ 
+
+  .th { @apply px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500; }
+  .td { @apply px-4 py-3 text-sm; }
+
+  .badge-primary { @apply inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700; }
+  .badge-soft { @apply inline-flex items-center rounded-full bg-slate-50 px-2 py-0.5 text-xs font-medium text-slate-700; }
+
+  .tab { @apply rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-100; }
+  .tab.active { @apply bg-blue-600 text-white; }
+
+  .progress { @apply h-2 w-full rounded-full bg-slate-200 overflow-hidden; }
+  .progress > span { @apply block h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600; }
+
+  .dot { @apply h-2.5 w-2.5 rounded-full; }
+  .dot--1 { @apply bg-blue-600; }
+  .dot--2 { @apply bg-indigo-500; }
+  .dot--3 { @apply bg-sky-400; }
+  .dot--4 { @apply bg-slate-400; }
+
+
+ .tile { @apply relative overflow-hidden rounded-2xl border bg-white p-5 shadow-sm transition hover:shadow-md; }
+  .tile-hero { @apply h-12 w-12 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center transition; }
+  .tile:hover .tile-hero { @apply bg-blue-600 text-white; }
+  .tile-title { @apply mt-3 text-base font-semibold; }
+  .tile-desc  { @apply mt-1 text-sm text-slate-500; }
+  .tile-chevron { @apply absolute right-4 top-4 opacity-0 transition; }
+  .tile:hover .tile-chevron { @apply opacity-100; }
+
+    .thead-group { @apply bg-slate-100; }
+  .thead-cols  { @apply bg-slate-50; }
+    .th { @apply px-3 py-2 font-semibold whitespace-nowrap text-left border-b border-slate-200; }
+  .td { @apply px-3 py-2 whitespace-nowrap border-b border-slate-100; }
+
+  /* Bật vạch chia cột khi bọc table bằng .with-col-dividers */
+  .with-col-dividers thead th,
+  .with-col-dividers tbody td { @apply border-r border-slate-200; }
+  .with-col-dividers tbody td { @apply border-slate-100; }
+  .with-col-dividers thead th:last-child,
+  .with-col-dividers tbody td:last-child { border-right-width: 0; }
+}

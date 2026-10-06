@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+
+/bootstrap/cache/*.php
+/storage/*.key
+/vendor/
+/node_modules/
